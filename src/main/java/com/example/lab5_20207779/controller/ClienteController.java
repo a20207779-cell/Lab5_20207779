@@ -1,4 +1,4 @@
-package com.example.Lab5_20207779.controller;
+package com.example.lab5_20207779.controller;
 
 import com.example.Lab5_20207779.entity.Cliente;
 import com.example.Lab5_20207779.repository.ClienteRepository;

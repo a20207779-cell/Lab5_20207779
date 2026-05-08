@@ -1,4 +1,4 @@
-package com.example.Lab5_20207779.repository;
+package com.example.lab5_20207779.repository;
 
 
 import com.example.Lab5_20207779.entity.Cliente;
