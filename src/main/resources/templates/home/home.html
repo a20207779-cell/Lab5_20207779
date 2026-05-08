@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-<head th:replace="fragments/fragment :: cabecera('Home')"></head>
+<head th:replace="~{fragments/navbar.html :: header( title = 'Productos')}"></head>
 <body class="container mt-4">
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>Apis resumen</h1>
