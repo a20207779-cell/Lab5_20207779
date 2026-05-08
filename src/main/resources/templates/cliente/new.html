@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/navbar.html :: header( title = 'Nuevo cliente')}"></head>
+<body>
+<div class="container">
+    <nav th:replace="~{fragments/navbar.html :: navbar( active = 'Cliente')}"></nav>
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <h2>Nuevo Empleado</h2>
+            <hr/>
+            <form th:action="@{'/employee/save'}" method="post">
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname"/>
+                </div>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">Tipo de documento</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname"/>
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Numero de documento</label>
+                    <input type="text" class="form-control" name="title" id="title"/>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:replace="~{fragments/navbar.html :: footer-bootstrap}"></script>
+</body>
+</html>

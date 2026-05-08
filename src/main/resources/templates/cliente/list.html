@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/navbar.html :: header( title = 'Clientes')}"></head>
+<body>
+<main>
+    <div class="container px-4 pb-5">
+        <nav th:replace="~{fragments/navbar.html :: navbar( active = 'Cliente')}"></nav>
+        <h1 class="pb-2 border-bottom">Lista de empleados</h1>
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{'/cliente/new'}">Nuevo Empleado</a>
+        <div th:if="${msg != null}" th:text="${msg}" class="alert alert-success" role="alert"></div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Fecha de inicio</th>
+                <th>Salario</th>
+                <th>Ciudad</th>
+                <th>Pais</th>
+                <th>Jefe</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee, info : ${listaEmpleados}">
+                <td th:text="${info.index + 1}"></td>
+                <td th:text="${cliente.name} + ' ' +${employee.lastname}"></td>
+                <td th:text="${cliente.document}"></td>
+                <td th:text="${cliente.document_type}"></td>
+
+            </tr>
+            </tbody>
+
+        <h4 class="mt-4">Cantidad de empleados por pais</h4>
+        <table class="table table-sm">
+            <tr>
+                <th>País</th>
+                <th>Cantidad de empleados</th>
+            </tr>
+            <tr th:each="empleadoPorPais : ${listaEmpleadosPorPais}">
+                <td th:text="${empleadoPorPais.getPais()}">
+                <td th:text="${empleadoPorPais.getCantidad()}"></td>
+            </tr>
+        </table>
+    </div>
+</main>
+<script th:replace="~{fragments/navbar.html :: footer-bootstrap}"></script>
+</body>
+</html>

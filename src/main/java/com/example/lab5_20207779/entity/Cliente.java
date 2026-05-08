@@ -17,7 +17,7 @@ public class Cliente {
     @Column(name = "customerid")
     private int id;
     @Column(nullable = false)
-    private String lastname;
+    private String nombre;
 
     private String document;
     private String document_type;
