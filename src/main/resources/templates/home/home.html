@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="fragments/fragment :: cabecera('Home')"></head>
+<body class="container mt-4">
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Apis resumen</h1>
+</div>
+<table class="table table-striped table-bordered">
+    <tr>
+
+
+        <th>Sistema de facturacion electronica</th>
+
+    </tr>
+    <tbody>
+    <tr th:each="api : ${listaApis}">
+        <td th:text="${api.getIdApi()}"></td>
+        <td th:text="${api.getNombreCompleto()}"></td>
+        <td th:text="${api.getEstado()}"></td>
+        <td th:text="${api.getEquipo()}"></td>
+        <td th:text="${api.getAreaEquipo()}"></td>
+        <td>
+            <a th:href="@{'/detalles/' + ${api.idApi}}" class="btn btn-primary">Ver endpoints</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
